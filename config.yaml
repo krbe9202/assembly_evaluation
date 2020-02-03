@@ -1,0 +1,11 @@
+# Assembly fasta file
+assembly_fasta: data/yeast_assembly.fa
+
+# Transcriptome fasta file
+transcriptome_fasta: data/transcriptome.fa
+
+# High quality transcripts fasta
+hq-transcripts_fasta: data/hq-transcripts.fa
+
+
+#TODO - move user settings here in the future. Now mostly hardcoded in rules.
