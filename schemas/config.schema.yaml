@@ -1,0 +1,20 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+description: config dictionary
+type: object
+properties:
+    assembly_fasta:
+        type: string
+        description: path to FASTA file with assembled contigs
+properties:
+    transcriptome_fasta:
+        type: string
+        description: path to FASTA file with assembled transcripts
+properties:
+    transcripts_hq_fasta:
+        type: string
+        description: path to FASTA file with high quality transcripts
+
+required:
+    - assembly_fasta
+    - transcriptome_fasta
+    - transcripts_hq_fasta

@@ -5,7 +5,25 @@ assembly_fasta: data/yeast_assembly.fa
 transcriptome_fasta: data/transcriptome.fa
 
 # High quality transcripts fasta
-hq-transcripts_fasta: data/hq-transcripts.fa
+transcripts_hq_fasta: data/hq-transcripts.fa
 
 
 #TODO - move user settings here in the future. Now mostly hardcoded in rules.
+
+
+# Cluster configuration
+cluster:
+    cookiecutter_url: https://github.com/Snakemake-Profiles/slurm
+    profile_name: test_slurm
+    use-conda: true
+    restart-times: 0
+    jobs: 100
+    latency-wait: 120
+
+    # Parameters specific for the cookiecutter template
+    account: test_slurm
+    output: "logs/slurm-%j.out"
+    error: "logs/slurm-%j.err"
+    partition: core
+    submit_script: slurm-submit-advanced.py
+
