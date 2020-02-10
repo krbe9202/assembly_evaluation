@@ -21,13 +21,12 @@ rule quast:
     conda: "envs/quast.yaml"
     shell: "quast.py --eukaryote --large --est-ref-size 20000000000 {input} -o {output}"
 
-# Commented out cause it doesn't run as expected on Mac os
-#rule busco:
-#    input:
-#        assembly=config["assembly_fasta"]
-#    output: directory("results/busco_out/")
-#    conda: "envs/busco.yaml"
-#    shell: "busco -f -m genome -i {input} -o {output} -l fungi_odb10" # Add as needed, this is just for testing.
+rule busco:
+    input:
+        assembly=config["assembly_fasta"]
+    output: directory("results/busco_out/")
+    conda: "envs/busco.yaml"
+    shell: "busco -f -m genome -i {input} -o {output} -l fungi_odb10" # Add as needed, this is just for testing.
 
 rule index_for_gmap:
     input:
