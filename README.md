@@ -3,8 +3,12 @@ Workflows for evaluating genome assemblies in spruce project.
 
 ## How to run
 
-1. Make a dedicated conda environment and activate it..
-2. Install snakemake 
+1. Make a dedicated conda environment and activate it.
+2. Install snakemake and dependencies. 
+```
+conda install -c conda-forge -bioconda snakemake
+```
+        
 3. Clone the repository
 4. Make a folder for the input data.
 5. Edit the config file to point to the desired input.
