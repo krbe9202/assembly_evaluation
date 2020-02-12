@@ -1,0 +1,19 @@
+__default__:
+    time: 60
+    partition: node
+    ntasks: 1
+    job_name: "{rule}.{wildcards}"
+    output: "logs/{rule}.{wildcards}.%j.out"
+    error: "logs/{rule}.{wildcards}.%j.err"
+
+busco:
+    time: 60
+
+gmap:
+    time: 60
+
+quast:
+    time: 60
+
+minimap2:
+    time: 60
