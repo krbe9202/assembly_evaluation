@@ -8,8 +8,10 @@ Workflows for evaluating genome assemblies in spruce project.
 3. Clone the repository
 4. Make a folder for the input data.
 5. Edit the config file to point to the desired input.
-6. Run snakemake -r cluster_config to prepare files needed for slurm.
-7. Run the complete wokflow "snakemake" or desired parts e.g. "snakemake -r busco" or "snakemake -r quast".
+6. Run snakemake --use-conda cluster_config to prepare files needed for slurm.
+7. Run the complete wokflow "snakemake" or desired parts.
+    In order to pick up the settings correctly run it like this (only running quast rule in this case):
+    snakemake --profile spruce_slurm --cluster-config /full/path/to/cluster/slurm.yaml quast
 
 ## Output
 
