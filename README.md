@@ -40,7 +40,8 @@ transcriptome_fasta: data/transcriptome.fa
 transcripts_hq_fasta: data/high_quality_transcripts.fa
 ```
 
-Give a descriptive name to your cluster profile (now "test_slurm" below) and add the name of your cluster account (replace "test_account" below with a valid account name (snicXXXX-X-XXX).
+Give a descriptive name to your cluster profile (now "test_slurm" below).  
+Add the name of your cluster account (replace "test_account" below with a valid account name (snicXXXX-X-XXX).
 ```
 
 # Cluster configuration
@@ -60,14 +61,15 @@ cluster:
     submit_script: slurm-submit-advanced.py
 ```
 
-6. First run the rule "cluster_config" like this to prepare files needed for slurm.
+6. First run the rule "cluster_config" like this to prepare files needed for slurm:
 ```
 snakemake --use-conda cluster_config
 ```
 This will create the folder "$HOME/.config/snakemamake/test_slurm" if run as above.
 
-7. Run the complete wokflow or desired parts. No need to use "--use-conda" for subsequent steps since it is take care of by the cluster profile.
-In order to pick up the settings correctly run it like this with full path to "slurm.yaml" (only running quast rule in this example case):
+7. Run the complete wokflow or desired parts.  
+No need to use "--use-conda" for subsequent steps since it is take care of by the cluster profile.  
+In order to pick up the settings correctly run it like this with full path to "slurm.yaml" (only running quast in this example case):
 ```
 snakemake --profile test_slurm --cluster-config /full/path/to/cluster/slurm.yaml quast
 ```
