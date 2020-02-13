@@ -1,15 +1,13 @@
 # Assembly fasta file
-assembly_fasta: data/yeast_assembly.fa
+assembly_fasta: data/assembly.fa
 
 # Transcriptome fasta file
 transcriptome_fasta: data/transcriptome.fa
 
 # High quality transcripts fasta
-transcripts_hq_fasta: data/hq-transcripts.fa
-
+transcripts_hq_fasta: data/high_quality_transcripts.fa
 
 #TODO - move user settings here in the future. Now mostly hardcoded in rules.
-
 
 # Cluster configuration
 cluster:
@@ -17,7 +15,7 @@ cluster:
     profile_name: test_slurm
     use-conda: true
     restart-times: 0
-    jobs: 100
+    jobs: 10
     latency-wait: 120
 
     # Parameters specific for the cookiecutter template

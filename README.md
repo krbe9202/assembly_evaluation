@@ -28,7 +28,7 @@ cp /path/to/high_quality_transcripts.fa data/
 ``` 
 There are three small datasets for testing in the folder "test/".
 
-5. Edit the config file to point to the desired input.
+5. Edit the config file ("config.yaml") to point to the desired input.
 ```
 # Assembly fasta file
 assembly_fasta: data/assembly.fa
