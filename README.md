@@ -69,7 +69,7 @@ This will create the folder "$HOME/.config/snakemamake/test_slurm" if run as abo
 7. Run the complete wokflow or desired parts. No need to use "--use-conda" for subsequent steps since it is take care of by the cluster profile.
 In order to pick up the settings correctly run it like this with full path to "slurm.yaml" (only running quast rule in this example case):
 ```
-snakemake --profile spruce_slurm --cluster-config /full/path/to/cluster/slurm.yaml quast
+snakemake --profile test_slurm --cluster-config /full/path/to/cluster/slurm.yaml quast
 ```
 
 ## Output
