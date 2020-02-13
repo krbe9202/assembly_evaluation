@@ -26,6 +26,7 @@ cp /path/to/assembly.fa data/
 cp /path/to/transcriptome.fa data/
 cp /path/to/high_quality_transcripts.fa data/
 ``` 
+There are three small datasets for testing in the folder "test/".
 
 5. Edit the config file to point to the desired input.
 ```
@@ -39,7 +40,7 @@ transcriptome_fasta: data/transcriptome.fa
 transcripts_hq_fasta: data/high_quality_transcripts.fa
 ```
 
-Give a descriptive name to your cluster profile (now "test_slurm") and add the name of your cluster account (replace "test_account" below with a valid account name.
+Give a descriptive name to your cluster profile (now "test_slurm" below) and add the name of your cluster account (replace "test_account" below with a valid account name (snicXXXX-X-XXX).
 ```
 
 # Cluster configuration
