@@ -76,5 +76,5 @@ snakemake --profile test_slurm --cluster-config /full/path/to/cluster/slurm.yaml
 
 ## Output
 
-The output is collected in the folder "results/".
+The output is collected in the folder "results/".  
 There should be one output folder for each analysis (quast, busco, gmap etc.)
