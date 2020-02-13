@@ -2,14 +2,14 @@ import os
 from pathlib import Path
 from snakemake.utils import validate
 
-configfile: 'config.yaml'
-validate(config, 'schemas/config.schema.yaml')
+configfile: "config.yaml"
+validate(config, "schemas/config.schema.yaml")
 
 localrules: all, cluster_config
 
 rule all:
     input: "results/quast_results/",
-           #results/busco_out/",
+           "results/busco_out/",
            "results/gmap_indexed_assembly/",
            "results/transcriptome_gmap/transcriptome_gmap.gff",
            "results/transcripts_hq_gmap/transcriptome_hq.gff"
@@ -26,7 +26,7 @@ rule busco:
         assembly=config["assembly_fasta"]
     output: directory("results/busco_out/")
     conda: "envs/busco.yaml"
-    shell: "busco -f -m genome -i {input} -o {output} -l fungi_odb10" # Add as needed, this is just for testing.
+    shell: "busco -f -m genome -i {input} -o results/busco_out -l fungi_odb10" # Add as needed, this is just for testing.
 
 rule index_for_gmap:
     input:
@@ -47,6 +47,7 @@ rule gmap_hq:
     conda: "envs/gmap.yaml"
     shell: "gmap -d gmap_indexed_assembly -D results/ {input} -f 2 > {output}"
   
+# TODO: add minimap2 here as well. 
 #rule minimap:
 #    input: assembly=config["assembly_fasta"]
 #    output:
